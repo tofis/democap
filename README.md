@@ -1,5 +1,5 @@
 # DeMoCap: Low-cost Marker-based Motion Capture
-Official implementation of "DeMoCap: Low-cost Marker-based Motion Capture" method.
+Official implementation of "DeMoCap: Low-cost Marker-based Motion Capture" method. [![](https://img.shields.io/badge/PDF-DeMoCap-red)](https://rdcu.be/czAXF)
 
 [![](https://img.shields.io/badge/IJCV-DeMoCap-blueviolet)](https://link.springer.com/article/10.1007/s11263-021-01526-z)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
