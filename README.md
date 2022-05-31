@@ -5,6 +5,7 @@ Official implementation of "DeMoCap: Low-cost Marker-based Motion Capture" metho
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Maintaner](https://img.shields.io/badge/maintainer-Anargyros_Chatzitofis-blue)](http://tofis.github.io)
 
+![DeMoCap Concept](./assets/img/overview.png)
 
 If you used the method or found this work useful, please cite:
 ```
