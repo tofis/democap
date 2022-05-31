@@ -27,14 +27,14 @@ Besides PyTorch, the following Python packages are needed:
 ## Dataset
 
 You can download [here](https://drive.google.com/file/d/1R0nqyBaKPp5wfJ0LH4hekUNrq4e3kodt/view?usp=sharing) the data used for training, validation and testing of DeMoCap.
-For accessing the data, a google drive request with a message confirming the consent with the data license (CC-BY-4.0) is mandatory.
+For accessing the data, a google drive request with a message confirming the consent with the data license (CC-BY-4.0) is mandatory. You will receive the decryption pass via email after that.
 
 ## Installation
 
 The code is powered by [moai-mdk](https://pypi.org/project/moai-mdk/) framework enabling the building of the model on a configuration-based implementation along with custom extra modules. 
 For further details with respect to the framework and the way it should be installed for running the code, please visit the [documentation](https://moai.readthedocs.io/en/latest/) of the framework.
 
-After the succesfull installation of the requirements, from the root folder od the project, run the code below:
+After the succesfull installation of the requirements, from the root folder of the project, run the code below:
 
 ```
 moai train democap\democap_HRNET_2_views_fp\democap_official.yaml --config-dir conf H4DIR_train_split={your_train_folder} H4DIR_test_split={your_test_folder} H4DIR_val_split={your_val_folder} +project_path=[{project_path_root}]
