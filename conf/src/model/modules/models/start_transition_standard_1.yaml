@@ -1,0 +1,16 @@
+# @package model.modules.branch1.modules.start_transition_standard_1
+
+_target_: moai.modules.lightning.highres.StartTransition
+identity:
+  convolution: conv2d
+  activation: relu
+  kernel_size: 3
+  stride: 1
+  padding: 1
+branched:
+  convolution: conv2d
+  activation: relu
+  downscale: none # maxpool2d
+  kernel_size: 3
+  stride: 2
+  padding: 1

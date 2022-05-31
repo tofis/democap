@@ -1,0 +1,83 @@
+defaults:
+  ###### HYDRA  
+  - hydra/job_logging: colorlog
+  - hydra/hydra_logging: colorlog
+
+  ###### ENGINE
+  - engine: engine
+  - engine/train: lightning
+  - engine/modules: manual_seed
+  - engine/modules: import
+
+  - engine/visualization: collection
+  - engine/visualization/visdom: image2d
+  # - engine/visualization/visdom: feature2d
+  - engine/visualization/visdom: pose2d
+  
+  - engine/log/lightning: collection
+  - engine/log/lightning/logger: visdom
+  - engine/log/lightning/logger: tabular
+
+  - engine/checkpoint/lightning: default
+
+  ###### DATA  
+  - data/train/loader: torch
+  - data/train/iterator: indexed
+  - data/train/augmentation: none
+  - src/data/train/dataset/human_pose: H4DIR
+
+  - data/test/loader: torch
+  - data/test/iterator: indexed
+  - data/test/augmentation: none
+  - src/data/test/dataset/human_pose: H4DIR
+
+  - data/val/loader: torch
+  - data/val/iterator: indexed
+  - data/val/augmentation: none
+  - src/data/val/dataset/human_pose: H4DIR
+
+  # ###### MODEL 
+  - model/networks/lightning/factory: cascade
+  - src/model/modules/models: hrnet_1
+  - src/model/modules/models: hrnet_2
+  - src/model/modules/models: highres_standard_1
+  - src/model/modules/models: highres_standard_2
+  - src/model/modules/models: top_branch_1
+  - src/model/modules/models: top_branch_2
+  - src/model/modules/models: start_transition_standard_1
+  - src/model/modules/models: stage_transition_standard_1
+  - src/model/modules/models: start_transition_standard_2
+  - src/model/modules/models: stage_transition_standard_2
+
+  - model/feedforward: preprocess 
+  - model/monads/generation: grid
+  - model/monads/distribution/reconstruction: isotropic_gaussian
+
+  - model/feedforward: postprocess
+  - src/model/monads/distribution: zmean
+  - model/monads/distribution/prior: spatial_softmax
+  - model/monads/distribution: center_of_mass
+  - model/monads/tensor: concat
+  - src/model/monads/keypoints: fuse_coords
+  - model/monads/keypoints: scale_coords
+
+  - model/parameters/initialization: default  
+  - model/parameters/optimization: single
+  - model/parameters/optimization/optimizer: adam
+  - model/parameters/optimization/scheduling: single
+  - model/parameters/optimization/scheduling/scheduler: step
+  - model/parameters/regularization: none
+
+  - model/supervision: weighted
+  - model/supervision/loss/regression/robust: wing
+  - model/supervision/loss/distribution: JS
+
+  - model/validation: indicators
+  - src/model/validation/metric/human_pose: rmse
+  - src/model/validation/metric/human_pose: mae
+
+  - democap/democap_HRNET_2_views_fp/democap_options
+  - democap/democap_HRNET_2_views_fp/democap_data
+  - democap/democap_HRNET_2_views_fp/democap_model
+  - democap/democap_HRNET_2_views_fp/democap_losses
+  - democap/democap_HRNET_2_views_fp/democap_metrics

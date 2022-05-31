@@ -1,0 +1,10 @@
+# @package data.train.iterator.datasets._name_
+
+_target_: src.data.datasets.human_pose.H4DIR.h4dir.H4DIR
+root_path: ${H4DIR_train_split}
+markers_out: 53
+joints_out: 19
+resolution: 160
+views: ["f","b","3d"]
+augment: True
+rs: True

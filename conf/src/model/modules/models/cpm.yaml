@@ -1,0 +1,5 @@
+# @package model.modules.branch1
+
+_target_: moai.modules.lightning.models.CPM
+num_markers: 53
+num_joints: 19

@@ -1,0 +1,30 @@
+# @package model.modules.branch2
+
+_target_: moai.modules.lightning.models.StackedHourglassMod_e2e
+configuration:
+  stacks: 4
+  in_features: 328
+  out_features: 72
+  output: _markers_hms_pred
+  # preproc:
+  #   block: conv2d
+  #   convolution: conv2d
+  #   activation: relu_bn2d
+  #   residual: bottleneck
+  #   # residual: preactiv_bottleneck
+  #   downscale: maxpool2d_aa
+  #   stem:
+  #     kernel_size: 7
+  #     stride: 2
+  #     padding: 3
+  projection:
+    block: conv2d
+    convolution: conv2d
+    activation: relu
+  prediction:
+    block: conv2d
+    convolution: conv2d
+    activation: relu
+    dropout: 0.0
+  merge:
+    dropout: 0.0

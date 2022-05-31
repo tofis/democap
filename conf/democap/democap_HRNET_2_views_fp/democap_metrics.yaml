@@ -1,0 +1,15 @@
+# @package _global_
+
+model:
+  validation:    
+    human_pose_rmse:
+      gt: [f_gt_markers_3d_original, f_gt_joints_3d_original]
+      pred: [pred_markers_3d_original, pred_joints_3d_original]
+      out: [rmse_m, rmse_j]
+    human_pose_mae:
+      gt: [f_gt_markers_3d_original, f_gt_joints_3d_original]
+      pred: [pred_markers_3d_original, pred_joints_3d_original]
+      out: [mae_m, mae_j]
+
+    indicators:
+      rmse_X_mae: '[rmse_m] * [rmse_j] * [mae_m] * [mae_j] / 100000000.0'

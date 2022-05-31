@@ -1,0 +1,11 @@
+# @package model.modules.branch1.modules.hourglass_1
+
+_target_: moai.modules.lightning.Hourglass
+features: 256
+depth: 1
+convolution: conv2d
+activation: relu_bn2d
+residual: bottleneck
+# residual: preactiv_bottleneck
+downscale: maxpool2d_aa
+upscale: upsample2d

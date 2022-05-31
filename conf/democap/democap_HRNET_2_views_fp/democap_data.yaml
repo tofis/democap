@@ -1,0 +1,35 @@
+H4DIR_train_split: ???
+H4DIR_test_split: ???
+H4DIR_val_split: ???
+
+data:
+  train:
+    iterator:
+      datasets:
+        H4DIR:
+          markers_out: 53
+          joints_out: 19
+          views: ["f","b", "3d"]
+          resolution: 160
+          augment: true
+          rs: true
+  test:
+    iterator:
+      datasets:
+        H4DIR:
+          markers_out: 53
+          joints_out: 19
+          views: ["f","b", "3d"]
+          resolution: 160
+          augment: false
+          rs: true
+  val:
+    iterator:
+      datasets:
+        H4DIR:
+          markers_out: 53
+          joints_out: 19
+          views: ["f","b","3d"]
+          resolution: 160
+          augment: true
+          rs: true

@@ -1,0 +1,19 @@
+all_heatmaps_gt: [f_hms_m_gt, b_hms_m_gt, f_hms_j_gt, b_hms_j_gt]
+all_heatmaps_pred: [f_hm_markers, b_hm_markers, f_hm_joints, b_hm_joints]
+all_kpts_gt: [f_gt_markers_3d, f_gt_joints_3d]
+all_kpts: [pred_markers_3d, pred_joints_3d]
+
+model:
+  supervision:
+    losses:
+      wing:
+        omega: 10.0
+        epsilon: 2.0
+    wing:
+      gt: ${all_kpts_gt}
+      pred: ${all_kpts}
+      weight: [1, 1]
+    JS:
+      gt: ${all_heatmaps_gt}
+      pred: ${all_heatmaps_pred}
+      weight: [400, 400, 400, 400]

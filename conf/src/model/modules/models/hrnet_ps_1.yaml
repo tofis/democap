@@ -1,0 +1,39 @@
+# @package model.modules.branch1
+
+_target_: moai.modules.lightning.models.HRNetModPS
+configuration:
+  stages: 4
+  in_features: 1
+  out_features: 53
+  input: ???
+  output: _markers_hms_pred
+  preproc:
+    stem:
+      blocks: [conv2d, conv2d]
+      convolutions: [conv2d, conv2d]
+      activations: [relu_bn2d, relu_bn2d]
+      kernel_sizes: [3, 3]
+      features: [32, 64]
+      strides: [2, 2]
+      paddings: [1, 1]
+  residual: 
+    block: bottleneck
+    convolution: conv2d
+    activation: bn2d_relu
+    features:
+      in_features: [64, 256]
+      out_features: [256, 256]
+      bottleneck_features: [64, 64]
+  branches:
+    block: conv2d
+    convolution: conv2d
+    activation: relu
+    kernel_size: 3
+    stride: 1
+    padding: 1
+    start_features: 32
+    modules: [1, 4, 3]
+    depths: 
+      - [4]
+      - [4, 4, 4, 4]
+      - [4, 4, 4]

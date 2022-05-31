@@ -1,0 +1,8 @@
+# @package model.modules.branch1.modules.top_branch_1
+
+_target_: moai.modules.lightning.highres.TopBranchHead
+convolution: conv2d
+activation: none
+kernel_size: 1
+padding: 0
+inplace: True

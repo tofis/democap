@@ -1,0 +1,7 @@
+# @package model.modules.branch1
+
+_target_: moai.modules.lightning.models.CMPM
+# configuration:
+#   in_features: 1
+#   out_features: 53
+#   output: _markers_hms_pred

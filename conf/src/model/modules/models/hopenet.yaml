@@ -1,0 +1,3 @@
+# @package model.modules.branch1
+
+_target_: moai.modules.lightning.models.HopeNet
