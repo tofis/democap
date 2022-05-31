@@ -5,14 +5,13 @@ import logging
 from src.data.datasets.human_pose.H4DIR.importers import (
 	load_3d_data
 )
-from src.data.datasets.human_pose.H4DIR.importers.image import (
-    get_depth_image_from_points
-)
-from src.data.datasets.human_pose.H4DIR.importers.projections import (
-    f_rotate_back,
+from src.data.datasets.human_pose.H4DIR.importers import (
+    get_depth_image_from_points,
+	f_rotate_back,
     f_rotate_left,
     f_rotate_right
 )
+
 from torch.utils.data.dataset import Dataset
 
 log = logging.getLogger(__name__)
