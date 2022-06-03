@@ -15,3 +15,8 @@ from src.data.datasets.human_pose.H4DIR.importers.markermap import (
 from src.data.datasets.human_pose.H4DIR.importers.image import (
     get_depth_image_from_points
 )
+from src.data.datasets.human_pose.H4DIR.importers.projections import (
+    f_rotate_back,
+    f_rotate_left,
+    f_rotate_right
+)
